@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lendings', function (Blueprint $table) {
             /* $table->id(); */
             $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('copy_id')->references('id')->on('copies');
+            $table->foreignId('copy_id')->references('copy_id')->on('copies');
             $table->date('start')->default('2020-01-01');
             $table->timestamps();
         });
