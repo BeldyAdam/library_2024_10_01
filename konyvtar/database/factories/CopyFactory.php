@@ -23,6 +23,6 @@ class CopyFactory extends Factory
             'hardcovered' => rand(0,2),
             'publication' => rand(1900,2024),
             'status' => rand(0,3)
->>>>>>> 237bebc891608ab2c6dac9d2943e396f0ca73568
+        ];
     }
 }
