@@ -20,5 +20,6 @@ Route::post('/user', [UserController::class, 'store']);
 Route::get('/lendings', [LendingController::class, 'index']);
 Route::get('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'show']);
 Route::post('/lending', [LendingController::class, 'store']);
-Route::put('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']);
+//módosítás patch, mert összetett kulcs
+Route::patch('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']);
 Route::delete('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']);

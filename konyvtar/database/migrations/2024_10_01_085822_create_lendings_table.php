@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('lendings', function (Blueprint $table) {
             /* $table->id(); */
+            $table->primary(['user_id', 'copy_id', 'start']);
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('copy_id')->references('copy_id')->on('copies');
             $table->date('start')->default('2020-01-01');
+            $table->date('end')->nullable();
+            // 0: nincs felszolítás; 1: első felszólítás
+            $table->smallInteger('warning')->default(0);
             $table->timestamps();
         });
     }
